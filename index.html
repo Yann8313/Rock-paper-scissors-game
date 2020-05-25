@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROCK,PAPER,SCISSORS</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <template id ='renderChoicePlayer'>
+      <div>
+        <h2>Choix du joueur</h2>
+        <img/>
+      </div>
+    </template>
+    <template id ='renderChoiceComputer'>
+      <div>
+        <h2>Choix de l'ordinateur</h2>
+        <img/>
+      </div>
+    </template>
+    <template id = 'results'>
+      <div> 
+      <h1></h1>
+    </div></template>
+    <section id="game">
+      
+      <h1>
+        Welcome to the game : <br/>
+        <br />
+        ROCK , PAPER , SCISSORS !!
+      </h1>
+      <div id="game__inputPlayer">
+        <label for="title" id ='inputTitle'>Player choice ?  </label>
+        <input type="text" id="input" placeholder="rock, paper or scissors ?" />
+        <input id="start" class="btn" type="submit" value="Start" />
+        <input id="resetBtn" class="btn" type="submit" value="Reset" />
+      </div>
+      <div id="renderAllChoices"></div>
+    </section>
+  </body>
+</html>

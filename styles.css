@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  width: 100%;
+  background: lightgrey;
+  display: flex;
+  justify-content: center; }
+
+/* GAME  */
+#game {
+  width: 100%;
+  position: relative; }
+  #game h1 {
+    text-align: center; }
+  #game #resetBtn {
+    border: 2px solid black;
+    padding: 0.5rem;
+    width: 15rem;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none; }
+  #game #start {
+    border: 2px solid black;
+    padding: 0.5rem;
+    width: 15rem;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 5px; }
+  #game .btn:hover {
+    transition: ease-in 0.3s;
+    background-color: #fff; }
+  #game #game__inputPlayer {
+    width: 100%;
+    position: relative;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    #game #game__inputPlayer #inputTitle {
+      font-size: 1.5rem; }
+    #game #game__inputPlayer #input {
+      padding: 0.5rem;
+      width: 15rem;
+      text-align: center;
+      height: 30px; }
+    #game #game__inputPlayer h1 {
+      background-color: lightgrey;
+      font-size: 1.5rem;
+      border-radius: 5px;
+      border: 2px solid black;
+      background-color: #838a8a;
+      animation: rotateTitle 2s  forwards; }
+@keyframes rotateTitle {
+  50% {
+    opacity: 0; }
+  100% {
+    transform: rotate(360deg);
+    font-size: 4rem; } }
+/* Player and Computer Choices   */
+#game img {
+  width: 20rem;
+  height: 15rem;
+  display: inline-block;
+  border-radius: 30%; }
+
+#renderAllChoices {
+  display: flex;
+  justify-content: center; }
+
+.imgChoice {
+  padding: 1rem; }
+
+.imgChoice h2 {
+  text-align: center; }
+
+@media (max-width: 770px) {
+  #renderAllChoices {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; } }
+
+/*# sourceMappingURL=styles.css.map */

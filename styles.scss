@@ -1,0 +1,113 @@
+$main-border: 2px solid black;
+$main-border-radius: 5px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background: lightgrey;
+  display: flex;
+  justify-content: center;
+}
+
+/* GAME  */
+
+#game {
+  width: 100%;
+  position: relative;
+
+  h1 {
+    text-align: center;
+  }
+  #resetBtn {
+    border: $main-border;
+    padding: 0.5rem;
+    width: 15rem;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: $main-border-radius;
+    display: none;
+  }
+  #start {
+    border: $main-border;
+    padding: 0.5rem;
+    width: 15rem;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: $main-border-radius;
+  }
+  .btn:hover {
+    transition: ease-in 0.3s;
+    background-color: #fff;
+  }
+  #game__inputPlayer {
+    width: 100%;
+    position: relative;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #inputTitle {
+      font-size: 1.5rem;
+    }
+
+    #input {
+      padding: 0.5rem;
+      width: 15rem;
+      text-align: center;
+      height: 30px;
+    }
+    h1 {
+      background-color: lightgrey;
+      font-size: 1.5rem;
+      border-radius: $main-border-radius;
+      border: $main-border;
+      background-color: #838a8a;
+      animation: rotateTitle 2s  forwards;
+    }
+  }
+
+  @keyframes rotateTitle {
+   
+    50% { 
+      opacity: 0;
+    }
+    100% {
+      transform: rotate(360deg);
+      font-size: 4rem;
+    }
+  }
+}
+
+/* Player and Computer Choices   */
+
+#game img {
+  width: 20rem;
+  height: 15rem;
+  display: inline-block;
+  border-radius: 30%;
+}
+
+#renderAllChoices {
+  display: flex;
+  justify-content: center;
+}
+
+.imgChoice {
+  padding: 1rem;
+}
+
+.imgChoice h2 {
+  text-align: center;
+}
+
+@media (max-width: 770px) {
+  #renderAllChoices {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
