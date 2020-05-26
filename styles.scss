@@ -37,6 +37,7 @@ body {
     margin: 1rem;
     cursor: pointer;
     border-radius: $main-border-radius;
+    display: block;
   }
   .btn:hover {
     transition: ease-in 0.3s;

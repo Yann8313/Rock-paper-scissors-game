@@ -18,15 +18,14 @@ let choiceTemplate;
 let choice;
 let result;
 
-
-
-const game = () => { 
+const startGame = () => {
   let value = InputPlayer.value.toUpperCase().trim();
   let randomValue = Math.random().toFixed(2) * 100;
   const ROCK = randomValue <= 30;
   const PAPER = randomValue > 30 && randomValue <= 70;
   const SCISSORS = randomValue > 70;
 
+  // This function will execute below each Player and Computer choice.
   const renderImg = () => {
     let renderChoice = document.createElement('div');
     renderChoice.className = 'imgChoice';
@@ -86,7 +85,8 @@ const game = () => {
         choice = SCISSORS_IMG;
         break;
       default:
-        alert('Wrong value');
+        alert('Enter rock, paper or scissors !');
+        clearElement();
         return;
     }
     choiceTemplate = playerTemplate;
@@ -98,17 +98,17 @@ const game = () => {
   showResults(value);
   startBtn.style.display = 'none';
   resetBtn.style.display = 'block';
-}
+};
 
-(function keyValidation(btn) {
+(function enterKey() {
   InputPlayer.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
-      btn.click();
-      startBtn.removeEventListener('click', game);
+      startBtn.click();
+      startBtn.removeEventListener('click', startGame);
     }
   });
-})(startBtn);
+})();
 
 const clearElement = () => {
   InputPlayer.value = '';
@@ -116,13 +116,10 @@ const clearElement = () => {
     img.remove();
   });
   resultsGame.querySelector('.result').remove();
-  resetBtn.style.display = 'none';
   startBtn.style.display = 'block';
-  startBtn.addEventListener('click', game);
+  resetBtn.style.display = 'none';
+  startBtn.addEventListener('click', startGame);
 };
 
-
-
-
 resetBtn.addEventListener('click', clearElement);
-startBtn.addEventListener('click', game);
+startBtn.addEventListener('click', startGame);
